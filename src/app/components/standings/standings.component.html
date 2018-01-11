@@ -1,3 +1,38 @@
-<p>
-  standings works!
-</p>
+<div class="tableContainer">
+  <h1>Standings</h1>
+  <table class = "table table-sm table-responsive-md table-striped table-hover">
+    <thead>
+      <th>#</th>
+      <th></th>
+      <th class="record">W-L</th>
+      <th>PCT</th>
+      <th>QPPG</th>
+      <th>OQPPG</th>
+      <th>QPDiff</th>
+      <th>SnPCT</th>
+      <th>SWIM</th>
+      <th>SOS</th>
+      <th>Perf</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let team of teams | paginate: { itemsPerPage: 25, currentPage: p }">
+        <td class="rank">{{team.genRank}}</td>
+        <td class="name">
+          <a href = '/{{team.teamName}}'>{{team.teamName}}</a>
+        </td>
+        <td class="record">{{team.w}}-{{team.l}}</td>
+        <td>{{team.wpct | number:'1.2-2'}}</td>
+        <td>{{team.qppg | number:'1.2-2'}}</td>
+        <td>{{team.oqppg | number:'1.2-2'}}</td>
+        <td>{{team.avgdiff | number:'1.2-2'}}</td>
+        <td>{{team.catchpct | number:'1.2-2'}}</td>
+        <td>{{team.swim | number:'1.2-2'}}</td>
+        <td>{{team.sos | number:'1.2-2'}}</td>
+        <td>{{team.perf | number:'1.2-2'}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="paginationContainer">
+    <pagination-controls (pageChange)="p = $event" maxSize="5" autohide="true"></pagination-controls>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+.tableContainer{
+    width: 95%;
+    background-color: white;
+    margin:auto;
+    font-size: 12px;
+    padding-top:20px;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+    padding-bottom: 20px;
+}
+
+table{
+    width:95%;
+    margin:auto;
+    font-size: 12px;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+}
+
+h1{
+    margin-left:5%;
+}
+
+td, th{
+    text-align: right;
+    border:none;
+    border-bottom: none;
+}
+
+.rank{
+    font-weight: bold;
+}
+
+.name{
+    text-align: left;
+    width:230px;
+    font-weight:bold;
+}
+
+.record{
+    text-align: center;
+    white-space: nowrap ;
+}
+
+td:nth-child(1), td:nth-child(2), td:nth-child(4), 
+td:nth-child(7), td:nth-child(8){
+    border-right:2px solid #ddd;
+}
+
+.paginationContainer{
+    text-align: right;
+    margin-right:5%;
+}
