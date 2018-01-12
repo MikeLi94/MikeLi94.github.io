@@ -27,7 +27,7 @@ import { TeampageComponent } from './components/teampage/teampage.component';
     TeamsComponent,
     ClubPipe,
     SearchComponent,
-    TeampageComponent
+    TeampageComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,8 +12,8 @@ import { Team } from './team';
 export class TeamsService {
   constructor(private http: HttpClient) { }
 
-  getStandings(): Observable<Team[]> {
-    return this.http.get<Team[]>('http://localhost:8080/standings/general');
+  getStandings(atLarge: string, division: string, region: string): Observable<Team[]> {
+    return this.http.get<Team[]>('http://localhost:8080/standings/' + atLarge + '/' + division + '/' + region);
   }
 
   getTeams(): Observable<Team[]> {

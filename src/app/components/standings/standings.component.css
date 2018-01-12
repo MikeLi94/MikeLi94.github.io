@@ -59,3 +59,15 @@ button, .btn-group{
 .cactive{
     background-color: #868E96;
 }
+
+general, atlarge{
+    width: 100px;
+}
+
+all{
+    width: 30px;
+}
+
+.cutoff{
+    border-bottom: 3px solid black;
+}

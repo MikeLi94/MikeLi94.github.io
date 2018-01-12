@@ -1,12 +1,21 @@
 <div class="tableContainer">
   <h1>Standings</h1>
   <div class="btn-group btn-group-sm">
-    <a (click)="onClickDiv('All')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : division === 'All'}">All</a>
+    <a (click)="onClickDiv('All')" class="btn btn-outline-secondary" 
+    [ngClass]="{'cactive' : division === 'All','disabled' : alb === 'atlarge'}" 
+    >All</a>
     <a (click)="onClickDiv('College')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : division === 'College'}">College</a>
-    <a (click)="onClickDiv('Club')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : division === 'Club'}">Club</a>
+    <a (click)="onClickDiv('Adult Community')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : division === 'Adult Community'}">Club</a>
   </div>
 
-  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="btn-group btn-group-sm">
+    <a (click)="onClickAlb('general')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : alb === 'general'}">General</a>
+    <a (click)="onClickAlb('atlarge')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : alb === 'atlarge'}">At Large</a>
+  </div>
+
+  <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" 
+  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" 
+  aria-expanded="false" [ngClass]="{'disabled' : alb === 'atlarge'}">
     <span *ngIf = "region === 'All'">Region</span>
     <span *ngIf = "region !== 'All'">{{region}}</span>
   </button>
@@ -47,11 +56,17 @@
       <th>Perf</th>
     </thead>
     <tbody>
-      <tr *ngFor="let team of teams | paginate: { itemsPerPage: 25, currentPage: p }">
-        <td class="rank">{{team.genRank}}</td>
+      <tr [ngClass] = "{'cutoff': alb ==='atlarge' && ((team.albRank === 16 && team.division === 'College') 
+      || (team.albRank === 11 && team.division === 'Adult Community'))}" 
+      *ngFor="let team of teams | paginate: { itemsPerPage: 25, currentPage: p }">
+        <td class="rank" *ngIf = "division === 'All'">{{team.genRank}}</td>
+        <td class="rank" *ngIf = "division !== 'All' && alb === 'general'">{{team.divRank}}</td>
+        <td class="rank" *ngIf = "division !== 'All' && alb === 'atlarge'">{{team.albRank}}</td>
+
         <td class="name">
           <a href = 'teams/{{team.teamName}}'>{{team.teamName}}</a>
         </td>
+
         <td class="record">{{team.w}}-{{team.l}}</td>
         <td>{{team.wpct | number:'1.2-2'}}</td>
         <td>{{team.qppg | number:'1.2-2'}}</td>
