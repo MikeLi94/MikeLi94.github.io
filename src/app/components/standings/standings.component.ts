@@ -21,7 +21,7 @@ export class StandingsComponent implements OnInit {
   }
 
   getTeams(): void {
-    this.teamsService.getTeams()
+    this.teamsService.getStandings()
       .subscribe(teams => this.teams = teams);
   }
 

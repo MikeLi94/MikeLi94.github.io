@@ -20,8 +20,15 @@ connection.connect();
 app.use(morgan('dev'));
 app.use(cors());
 
-app.get('/', function (req, res){
+app.get('/standings/general', function (req, res){
     connection.query('SELECT * FROM standings2017_2018 WHERE games > 0 ORDER BY genRank',  function (error, results, fields) {
+        if (error) throw error;
+        res.send(results);
+      });
+});
+
+app.get('/teams', function (req, res){
+    connection.query('SELECT * FROM teams ORDER BY name ASC',  function (error, results, fields) {
         if (error) throw error;
         res.send(results);
       });

@@ -12,6 +12,7 @@ import { StandingsComponent } from './components/standings/standings.component';
 import { TeamsComponent } from './components/teams/teams.component';
 
 import { TeamsService } from './shared/teams.service';
+import { ClubPipe } from './components/teams/club.pipe';
 
 
 
@@ -21,7 +22,8 @@ import { TeamsService } from './shared/teams.service';
     HeaderComponent,
     FooterComponent,
     StandingsComponent,
-    TeamsComponent
+    TeamsComponent,
+    ClubPipe
   ],
   imports: [
     BrowserModule,
