@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Team } from '../../shared/team';
 import { TeamsService } from '../../shared/teams.service';
+import { NgClass } from '@angular/common';
 
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -14,6 +15,9 @@ export class StandingsComponent implements OnInit {
 
   teams: Team[];
 
+  division = 'All';
+  region = 'All';
+
   constructor(private teamsService: TeamsService) { }
 
   ngOnInit() {
@@ -23,6 +27,14 @@ export class StandingsComponent implements OnInit {
   getTeams(): void {
     this.teamsService.getStandings()
       .subscribe(teams => this.teams = teams);
+  }
+
+  onClickDiv(division: string) {
+    this.division = division;
+  }
+
+  onClickReg(region: string) {
+    this.region = region;
   }
 
 

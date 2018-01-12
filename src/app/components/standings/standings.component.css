@@ -53,4 +53,9 @@ td:nth-child(7), td:nth-child(8){
 
 button, .btn-group{
     margin-top:10px;
+    color: black;
+}
+
+.cactive{
+    background-color: #868E96;
 }

@@ -1,26 +1,26 @@
 <div class="tableContainer">
   <h1>Standings</h1>
-
   <div class="btn-group btn-group-sm">
-    <a class="btn btn-outline-secondary">General</a>
-    <a class="btn btn-outline-secondary">College</a>
-    <a class="btn btn-outline-secondary">Club</a>
+    <a (click)="onClickDiv('All')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : division === 'All'}">All</a>
+    <a (click)="onClickDiv('College')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : division === 'College'}">College</a>
+    <a (click)="onClickDiv('Club')" class="btn btn-outline-secondary" [ngClass]="{'cactive' : division === 'Club'}">Club</a>
   </div>
 
   <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Region
+    <span *ngIf = "region === 'All'">Region</span>
+    <span *ngIf = "region !== 'All'">{{region}}</span>
   </button>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">All</a>
-    <a class="dropdown-item" href="#">Great Lakes</a>
-    <a class="dropdown-item" href="#">Mid-Atlantic</a>
-    <a class="dropdown-item" href="#">Midwest</a>
-    <a class="dropdown-item" href="#">Northeast</a>
-    <a class="dropdown-item" href="#">Northwest</a>
-    <a class="dropdown-item" href="#">South</a>
-    <a class="dropdown-item" href="#">Southwest</a>
-    <a class="dropdown-item" href="#">West</a>
+    <a (click)="onClickReg('All')" class="dropdown-item">All</a>
+    <a (click)="onClickReg('Great Lakes')" class="dropdown-item">Great Lakes</a>
+    <a (click)="onClickReg('Mid-Atlantic')" class="dropdown-item">Mid-Atlantic</a>
+    <a (click)="onClickReg('Midwest')" class="dropdown-item">Midwest</a>
+    <a (click)="onClickReg('Northeast')" class="dropdown-item">Northeast</a>
+    <a (click)="onClickReg('Northwest')" class="dropdown-item">Northwest</a>
+    <a (click)="onClickReg('South')" class="dropdown-item">South</a>
+    <a (click)="onClickReg('Southwest')" class="dropdown-item">Southwest</a>
+    <a (click)="onClickReg('West')" class="dropdown-item">West</a>
   </div>
 
   <button class="btn btn-sm btn-outline-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
