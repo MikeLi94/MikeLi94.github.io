@@ -6,7 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ClubPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return null;
+    if (value === 'Adult Community') {
+      return 'Club';
+    }
+    return value;
   }
 
 }

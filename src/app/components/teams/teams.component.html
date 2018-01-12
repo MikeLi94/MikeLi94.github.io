@@ -11,7 +11,7 @@
       <tr *ngFor="let team of teams| paginate: { itemsPerPage: 25, currentPage: p }">
         <td class="name"><a href = "teams/{{team.name}}">{{team.name}}</a></td>
         <td>{{team.region}}</td>
-        <td>{{team.division}}</td>
+        <td>{{team.division | club}}</td>
         <td>{{team.location}}</td>
       </tr>
     </tbody>

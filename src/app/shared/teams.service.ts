@@ -20,6 +20,10 @@ export class TeamsService {
     return this.http.get<Team[]>('http://localhost:8080/teams');
   }
 
+  getTeam(team: string): Observable<Team[]> {
+    return this.http.get<Team[]>('http://localhost:8080/teams/' + team);
+  }
+
   searchTeams(term: string): Observable<Team[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.

@@ -16,9 +16,13 @@ table{
 }
 
 .name{
-    width:200px;
+    /* width:200px; */
 }
 
 .paginationContainer{
     text-align: right;
+}
+
+tr, th, td {
+    border:none;
 }
