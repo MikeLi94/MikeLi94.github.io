@@ -50,7 +50,7 @@
       <tr *ngFor="let team of teams | paginate: { itemsPerPage: 25, currentPage: p }">
         <td class="rank">{{team.genRank}}</td>
         <td class="name">
-          <a href = '/{{team.teamName}}'>{{team.teamName}}</a>
+          <a href = 'teams/{{team.teamName}}'>{{team.teamName}}</a>
         </td>
         <td class="record">{{team.w}}-{{team.l}}</td>
         <td>{{team.wpct | number:'1.2-2'}}</td>

@@ -13,6 +13,8 @@ import { TeamsComponent } from './components/teams/teams.component';
 
 import { TeamsService } from './shared/teams.service';
 import { ClubPipe } from './components/teams/club.pipe';
+import { SearchComponent } from './components/layout/search/search.component';
+import { TeampageComponent } from './components/teampage/teampage.component';
 
 
 
@@ -23,7 +25,9 @@ import { ClubPipe } from './components/teams/club.pipe';
     FooterComponent,
     StandingsComponent,
     TeamsComponent,
-    ClubPipe
+    ClubPipe,
+    SearchComponent,
+    TeampageComponent
   ],
   imports: [
     BrowserModule,

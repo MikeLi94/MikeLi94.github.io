@@ -13,11 +13,19 @@ export class TeamsService {
   constructor(private http: HttpClient) { }
 
   getStandings(): Observable<Team[]> {
-    return this.http.get('http://localhost:8080/standings/general');
+    return this.http.get<Team[]>('http://localhost:8080/standings/general');
   }
 
   getTeams(): Observable<Team[]> {
-    return this.http.get('http://localhost:8080/teams');
+    return this.http.get<Team[]>('http://localhost:8080/teams');
+  }
+
+  searchTeams(term: string): Observable<Team[]> {
+    if (!term.trim()) {
+      // if not search term, return empty hero array.
+      return of([]);
+    }
+    return this.http.get<Team[]>('http://localhost:8080/teams/search/' + term);
   }
 
 }

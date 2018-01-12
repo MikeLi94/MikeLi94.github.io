@@ -34,4 +34,11 @@ app.get('/teams', function (req, res){
       });
 });
 
+app.get('/teams/search/:term', function (req, res){
+    connection.query('SELECT name FROM teams WHERE name LIKE ? ORDER BY name ASC LIMIT 5',['%' + req.params.term + '%'],  function (error, results, fields) {
+        if (error) throw error;
+        res.send(results);
+      });
+});
+
 app.listen(port);
