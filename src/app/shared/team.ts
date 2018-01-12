@@ -28,4 +28,5 @@ export class Team {
     genRank: number;
     divRank: number;
     albRank: number;
-};
+    location: string;
+}

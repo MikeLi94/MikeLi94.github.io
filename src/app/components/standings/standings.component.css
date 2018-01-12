@@ -4,21 +4,19 @@
     margin:auto;
     font-size: 12px;
     padding-top:20px;
-    /* margin-top: 20px;
-    margin-bottom: 20px; */
+    padding-left:2.5%;
+    padding-right:2.5%;
     padding-bottom: 20px;
 }
 
 table{
-    width:95%;
     margin:auto;
     font-size: 12px;
     margin-top: 20px;
-    /* margin-bottom: 20px; */
 }
 
 h1{
-    margin-left:5%;
+    margin-bottom: 20px;
 }
 
 td, th{
@@ -29,6 +27,7 @@ td, th{
 
 .rank{
     font-weight: bold;
+    width:30px
 }
 
 .name{
@@ -49,5 +48,9 @@ td:nth-child(7), td:nth-child(8){
 
 .paginationContainer{
     text-align: right;
-    margin-right:5%;
+    /* margin-right:5%; */
+}
+
+button, .btn-group{
+    margin-top:10px;
 }

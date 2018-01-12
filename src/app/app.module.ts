@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { StandingsComponent } from './components/standings/standings.component';
-
-import { AppRoutingModule } from './app-routing.module';
-import { NgxPaginationModule } from 'ngx-pagination';
+import { TeamsComponent } from './components/teams/teams.component';
 
 import { TeamsService } from './shared/teams.service';
+
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { TeamsService } from './shared/teams.service';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    StandingsComponent
+    StandingsComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,
