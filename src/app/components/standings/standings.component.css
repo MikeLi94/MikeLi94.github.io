@@ -57,17 +57,16 @@ button, .btn-group{
 }
 
 .cactive{
+    color: white !important;
     background-color: #868E96;
-}
-
-general, atlarge{
-    width: 100px;
-}
-
-all{
-    width: 30px;
 }
 
 .cutoff{
     border-bottom: 3px solid black;
+}
+
+.glossary{
+    border:2px solid #ddd;
+    border-radius: 3px;
+    padding:10px;
 }

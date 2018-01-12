@@ -7,6 +7,7 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { TeampageComponent } from './components/teampage/teampage.component';
 
 const routes: Routes = [
+  { path: '',   redirectTo: 'standings', pathMatch: 'full' },
   { path: 'standings', component: StandingsComponent },
   { path: 'teams', component: TeamsComponent },
   { path: 'teams/:team', component: TeampageComponent }
