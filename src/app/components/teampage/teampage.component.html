@@ -1,5 +1,61 @@
-<div *ngFor="let data of team">
+<div class="teamInfo" *ngFor="let data of team">
 
-  <h1>{{data.teamName}}</h1>
+  <div class="stats">
 
+    <h1 class="teamname">{{data.teamName}}</h1>
+      <!-- RECORD -->
+    <div class="statsContainer">
+    <!-- RANKING -->
+      <div class="align-top rank" style="display:inline-block">
+        <h3><b>Rank</b></h3>
+        <h1>#{{data.genRank}}</h1>
+      </div>
+      <div class="align-top rank" style="display:inline-block">
+        <h3><b>Div-Rank</b></h3>
+        <h1>#{{data.divRank}}</h1>
+      </div>
+      <table class="table table-sm">  
+        <tr>
+          <th>Record</th>
+          <td>{{data.w}}-{{data.l}}</td>
+        </tr>
+        <tr>
+          <th>PCT</th>
+          <td>{{data.wpct | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+          <th>SR Record</th>
+          <td>{{data.srW}}-{{data.srL}}</td>
+        </tr>
+        <tr>
+          <th>SR PCT</th>
+          <td>{{data.srPCT | number: '1.2-2'}}</td>
+        </tr>
+      </table>
+
+      <!-- STATS -->
+      <table class="table table-sm">
+        <tr>
+          <th>QPPG</th>
+          <td>{{data.qppg | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+          <th>OQPPG</th>
+          <td>{{data.oqppg | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+          <th>QP Diff</th>
+          <td>{{data.avgdiff | number: '1.2-2'}}</td>
+        </tr>
+        <tr>
+          <th>Catch PCT</th>
+          <td>{{data.catchpct | number: '1.2-2'}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="games">
+    <app-game></app-game>
 </div>

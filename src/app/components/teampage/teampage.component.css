@@ -1,0 +1,55 @@
+table{
+    text-align: left;
+    display:inline-block;
+    width:165px;
+    margin-right:20px;
+    margin-left:20px;
+}
+
+tr, th, td{
+    border:none;
+}
+
+td {
+    text-align: right;
+}
+
+th{
+    /* border-right: 1px solid #aaa; */
+}
+
+.stats{
+    text-align: center;
+    background-color:white;
+}
+
+.rank{
+    margin-right:40px;
+    margin-left:40px;
+    width: 125px;
+}
+
+h1 {
+    font-size:300%;
+}
+
+.teaminfo{
+    width:100% !important;
+}
+
+.teamname{
+    margin: 20px;
+    /* margin-bottom: 50px; */
+}
+
+.statsContainer{
+    margin:20px;
+    margin-bottom:0px;
+}
+
+.games{
+    background-color: #eee;
+    width: 100%;
+    padding: 2.5%;
+    text-align: center;
+}

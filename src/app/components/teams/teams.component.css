@@ -27,3 +27,7 @@ table{
 tr, th, td {
     border:none;
 }
+
+.container-fluid{
+    padding:2.5%;
+}

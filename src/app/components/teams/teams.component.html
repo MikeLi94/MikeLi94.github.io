@@ -1,23 +1,25 @@
-<div class="tableContainer">
-  <h2>Teams</h2>
-  <table class="table table-striped table-hover table-sm table-responsive-sm">
-    <thead>
-      <th>Team</th>
-      <th>Region</th>
-      <th>Division</th>
-      <th>Location</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let team of teams| paginate: { itemsPerPage: 25, currentPage: p }">
-        <td class="name"><a href = "teams/{{team.name}}">{{team.name}}</a></td>
-        <td>{{team.region}}</td>
-        <td>{{team.division | club}}</td>
-        <td>{{team.location}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class=container-fluid>
+  <div class="tableContainer">
+    <h2>Teams</h2>
+    <table class="table table-striped table-hover table-sm table-responsive-sm">
+      <thead>
+        <th>Team</th>
+        <th>Region</th>
+        <th>Division</th>
+        <th>Location</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let team of teams| paginate: { itemsPerPage: 25, currentPage: p }">
+          <td class="name"><a href = "teams/{{team.name}}">{{team.name}}</a></td>
+          <td>{{team.region}}</td>
+          <td>{{team.division | club}}</td>
+          <td>{{team.location}}</td>
+        </tr>
+      </tbody>
+    </table>
 
-  <div class="paginationContainer">
-      <pagination-controls (pageChange)="p = $event" maxSize="5" autohide="true"></pagination-controls>
+    <div class="paginationContainer">
+        <pagination-controls (pageChange)="p = $event" maxSize="5" autohide="true"></pagination-controls>
+    </div>
   </div>
 </div>

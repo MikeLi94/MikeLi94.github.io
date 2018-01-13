@@ -15,7 +15,12 @@ var connection = mysql.createConnection({
     database : 'quiddb'
 });
 
-connection.connect();
+connection.connect(function (err){
+    if (err){
+        console.log('Unable to connect to server try: sudo service mysql start');
+        throw err;
+    }
+});
 
 app.use(morgan('dev'));
 app.use(cors());
@@ -85,6 +90,31 @@ app.get('/teams/:team', function (req, res){
 
 app.get('/teams/search/:term', function (req, res){
     connection.query('SELECT name FROM teams WHERE name LIKE ? ORDER BY name ASC LIMIT 5',['%' + req.params.term + '%'],  function (error, results, fields) {
+        if (error) throw error;
+        res.send(results);
+      });
+});
+
+app.get('/teams/:team/games', function (req, res){
+    connection.query(`
+    SELECT * FROM (((SELECT teamName, genRank AS rank1 from standings2017_2018) AS s1 JOIN games ON teamName = team1) 
+    JOIN (SELECT s.teamName, s.genRank AS rank2 FROM standings2017_2018 AS s) AS s2 ON s2.teamName = team2) 
+    WHERE team1 = ? OR team2 = ? ORDER BY gameDate DESC, event`, 
+    [req.params.team, req.params.team], function (error, results, fields) {
+        if (error) throw error;
+        res.send(results);
+      });
+});
+
+app.get('/teams/:team/events', function (req, res){
+    connection.query(`SELECT event, max(gameDate) as gameDate FROM games WHERE team1 = ? OR team2 = ? GROUP BY event ORDER BY gameDate DESC`, [req.params.team, req.params.team], function (error, results, fields) {
+        if (error) throw error;
+        res.send(results);
+      });
+});
+
+app.get('/rank/:team', function (req, res){
+    connection.query('SELECT genRank FROM standings2017_2018 where teamName = ?', [req.params.team], function (error, results, fields) {
         if (error) throw error;
         res.send(results);
       });

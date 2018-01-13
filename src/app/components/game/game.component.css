@@ -1,0 +1,53 @@
+.game{
+    display:inline-block;
+    border:1px solid #aaa;
+    width: 300px;
+    text-align: left;
+    /* height: 150px; */
+    margin:20px;
+    /* margin:auto; */
+    /* margin-bottom: 20px; */
+    background-color: white;
+}
+
+.infoLine{
+    border-bottom:1px solid #aaa;
+    height:25px;
+    padding:3px 5px 3px 5px;
+    font-size: 12px;
+}
+
+.swim{
+    float:right;
+}
+
+.teamLine{
+    padding:5px;
+    font-weight: bold;
+    height:50px;
+}
+
+.rank{
+    width:40px;
+    /* text-align: right; */
+}
+
+.teamName{
+    width:208px;
+}
+
+.score{
+    width:60px;
+    text-align: right;
+}
+
+.tableContainer{
+    padding:5px;
+}
+
+.loser{
+    color:#aaa;
+}
+.snitch{
+    float:right;
+}

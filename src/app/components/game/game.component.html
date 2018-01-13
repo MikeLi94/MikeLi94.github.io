@@ -1,0 +1,48 @@
+<div *ngFor="let event of events">
+    <h2>{{event.event}}</h2>
+    <h3>{{event.gameDate | date}}</h3>
+    <span *ngFor = "let game of games">
+        <div class="game" *ngIf="game.event === event.event">
+            <div class="infoLine">
+                <span class="time">
+                    {{game.gameTime}}
+                </span>
+                <span class="swim">
+                    {{game.swim}}
+                </span>
+            </div>
+            <div class="tableContainer">
+                <table>
+                    <tr class="teamLine" [ngClass]="{loser:game.score2 > game.score1}">
+                        <td class="rank">
+                            {{game.rank1}}
+                        </td>
+                        <td class="teamName">
+                            {{game.team1}}
+                        </td>
+                        <td class="score">
+                            {{game.score1}}
+                            <span *ngIf="game.doubleOvertimeSnitch === 1" class="snitch">!</span>
+                            <span *ngIf="game.overtimeSnitch === 1" class="snitch">^</span>
+                            <span *ngIf="game.snitch === 1" class="snitch">*</span>
+                        </td>
+                    </tr>
+                    <tr class="teamLine" [ngClass]="{loser:game.score2 < game.score1}">
+                        <td class="rank">
+                            {{game.rank2}}
+                        </td>
+                        <td class="teamName">
+                            {{game.team2}}
+                        </td>
+                        <td class="score">
+                            {{game.score2}}
+                            <span *ngIf="game.doubleOvertimeSnitch === 2" class="snitch">!</span>
+                            <span *ngIf="game.overtimeSnitch === 2" class="snitch">^</span>
+                            <span *ngIf="game.snitch === 2" class="snitch">*</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </span>
+</div>

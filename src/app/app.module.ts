@@ -15,7 +15,8 @@ import { TeamsService } from './shared/teams.service';
 import { ClubPipe } from './components/teams/club.pipe';
 import { SearchComponent } from './components/layout/search/search.component';
 import { TeampageComponent } from './components/teampage/teampage.component';
-
+import { GameComponent } from './components/game/game.component';
+import { GamesService } from './shared/games.service';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { TeampageComponent } from './components/teampage/teampage.component';
     ClubPipe,
     SearchComponent,
     TeampageComponent,
+    GameComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,7 @@ import { TeampageComponent } from './components/teampage/teampage.component';
     HttpClientModule,
     NgxPaginationModule
   ],
-  providers: [TeamsService],
+  providers: [TeamsService, GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
