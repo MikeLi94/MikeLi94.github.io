@@ -70,8 +70,14 @@ button, .btn-group{
     border:2px solid #ddd;
     border-radius: 3px;
     padding:10px;
+    overflow-x: scroll;
 }
 
 .container-fluid{
     padding:2.5%;
+}
+
+th {
+    cursor: row-resize;
+    white-space: nowrap;
 }

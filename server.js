@@ -9,10 +9,10 @@ var cors = require('cors')
 var port = 8080;
 
 var connection = mysql.createConnection({
-    host     : 'localhost',
+    host     : 'awsquid.cbfnhixvsxgj.us-west-2.rds.amazonaws.com',
     user     : 'root',
-    password : 'LuingusMansion64!',
-    database : 'quiddb'
+    password : 'mypassword',
+    database : 'quid'
 });
 
 connection.connect(function (err){
@@ -29,10 +29,10 @@ app.get('/standings/general', function (req, res){
     connection.query('SELECT * FROM standings2017_2018 WHERE games > 0 ORDER BY genRank',  function (error, results, fields) {
         if (error) throw error;
         res.send(results);
-      });
+    });
 });
 
-app.get('/standings/general/:division/:region', function (req, res){
+app.get('/standings/general/:division/:region/:sort/:cend', function (req, res){
     var sql = `
     SELECT *
     FROM (standings2017_2018 JOIN teams ON teamname = name)
@@ -46,14 +46,17 @@ app.get('/standings/general/:division/:region', function (req, res){
         var reg = mysql.format('AND region = ?',[req.params.region]);
         sql += reg;
     }
-    sql += 'ORDER BY genRank ASC'
+    var ord = 'ORDER BY ' + req.params.sort + ' ' + req.params.cend;
+    sql += ord;
+
+    // console.log(sql);
     connection.query(sql,  function (error, results, fields) {
         if (error) throw error;
         res.send(results);
-      });
+    });
 });
 
-app.get('/standings/atlarge/:division/:region', function (req, res){
+app.get('/standings/atlarge/:division/:region/:sort/:cend', function (req, res){
     var sql = `
     SELECT *
     FROM (standings2017_2018 JOIN teams ON teamname = name)
@@ -67,7 +70,11 @@ app.get('/standings/atlarge/:division/:region', function (req, res){
         var reg = mysql.format('AND region = ?',[req.params.region]);
         sql += reg;
     }
-    sql += 'ORDER BY genRank ASC'
+    var ord = 'ORDER BY ' + req.params.sort + ' ' + req.params.cend;
+
+    sql += ord;
+
+    // console.log(sql);
     connection.query(sql,  function (error, results, fields) {
         if (error) throw error;
         res.send(results);

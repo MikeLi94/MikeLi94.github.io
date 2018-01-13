@@ -21,6 +21,8 @@ export class StandingsComponent implements OnInit {
   private division = 'All';
   private region = 'All';
   private alb = 'general';
+  private sort = 'perf';
+  private cend = 'DESC';
 
   constructor(private teamsService: TeamsService) { }
 
@@ -29,7 +31,7 @@ export class StandingsComponent implements OnInit {
   }
 
   getTeams(): void {
-    this.teamsService.getStandings(this.alb, this.division, this.region)
+    this.teamsService.getStandings(this.alb, this.division, this.region, this.sort, this.cend)
       .subscribe(teams => this.teams = teams);
   }
 
@@ -52,5 +54,21 @@ export class StandingsComponent implements OnInit {
     this.getTeams();
   }
 
+  onClickSort(sort: string) {
+    if (sort === this.sort) {
+      this.switchCend();
+    }
+    this.sort = sort;
+    this.getTeams();
+  }
+
+  switchCend() {
+    if (this.cend === 'ASC') {
+      this.cend = 'DESC';
+    }
+    else {
+      this.cend = 'ASC';
+    }
+  }
 
 }

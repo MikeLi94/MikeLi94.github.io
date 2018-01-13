@@ -60,17 +60,17 @@
     <!-- TABLE HEADERS -->
     <table class = "table table-sm table-responsive-md table-striped table-hover">
       <thead>
-        <th>#</th>
-        <th></th>
-        <th class="record">W-L</th>
-        <th>PCT</th>
-        <th>QPPG</th>
-        <th>OQPPG</th>
-        <th>QPDiff</th>
-        <th>SnPCT</th>
-        <th>SWIM</th>
-        <th>SOS</th>
-        <th>Perf</th>
+        <th (click)="onClickSort('perf')">#<i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('teamName')"></th>
+        <th class="record"><span (click)="onClickSort('w')">W</span>-<span (click)="onClickSort('l')">L</span><i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('wpct')">PCT <i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('qppg')">QPPG<i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('oqppg')">OQPPG<i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('avgdiff')">QPDiff<i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('catchpct')">SnPCT<i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('swim')">SWIM<i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('sos')">SOS<i class="fas fa-sort"></i></th>
+        <th (click)="onClickSort('perf')">Perf<i class="fas fa-sort"></i></th>
       </thead>
 
       <!-- STANDINGS BODY -->
