@@ -12,7 +12,7 @@ import { Event } from './event';
 @Injectable()
 export class GamesService {
 
-  private baseUrl = 'http://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
+  private baseUrl = 'https://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
 
   constructor(private http: HttpClient) { }
   getGames(team: string): Observable<Game[]> {

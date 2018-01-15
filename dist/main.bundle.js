@@ -796,7 +796,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var GamesService = (function () {
     function GamesService(http) {
         this.http = http;
-        this.baseUrl = 'http://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
+        this.baseUrl = 'https://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
     }
     GamesService.prototype.getGames = function (team) {
         return this.http.get(this.baseUrl + 'teams/' + team + '/games');
@@ -845,7 +845,7 @@ var TeamsService = (function () {
         // getStandings(atLarge: string, division: string, region: string): Observable<Team[]> {
         //   return this.http.get<Team[]>('http://localhost:8080/standings/' + atLarge + '/' + division + '/' + region );
         // }
-        this.baseUrl = 'http://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
+        this.baseUrl = 'https://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
     }
     TeamsService.prototype.getStandings = function (atLarge, division, region, sort, cend) {
         return this.http.get(this.baseUrl + 'standings/' + atLarge + '/' + division + '/' + region + '/' + sort + '/' + cend);
