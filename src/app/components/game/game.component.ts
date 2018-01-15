@@ -18,9 +18,9 @@ export class GameComponent implements OnInit {
   teamName = this.route.snapshot.paramMap.get('team');
 
   constructor(
-    private gamesService: GamesService,
-    private route: ActivatedRoute,
-    private location: Location) { }
+    public gamesService: GamesService,
+    public route: ActivatedRoute,
+    public location: Location) { }
 
   ngOnInit() {
     this.getEvents();

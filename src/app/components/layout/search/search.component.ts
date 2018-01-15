@@ -18,7 +18,7 @@ import { TeamsService } from '../../../shared/teams.service';
 })
 export class SearchComponent implements OnInit {
   teams$: Observable<Team[]>;
-  private searchTerms = new Subject<string>();
+  public searchTerms = new Subject<string>();
 
   constructor(private teamsService: TeamsService) {}
 

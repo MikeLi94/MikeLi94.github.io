@@ -18,11 +18,11 @@ import { of } from 'rxjs/observable/of';
 export class StandingsComponent implements OnInit {
   teams: Team[];
 
-  private division = 'All';
-  private region = 'All';
-  private alb = 'general';
-  private sort = 'perf';
-  private cend = 'DESC';
+  public division = 'All';
+  public region = 'All';
+  public alb = 'general';
+  public sort = 'perf';
+  public cend = 'DESC';
 
   constructor(private teamsService: TeamsService) { }
 
