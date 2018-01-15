@@ -796,12 +796,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var GamesService = (function () {
     function GamesService(http) {
         this.http = http;
+        this.baseUrl = 'http://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
     }
     GamesService.prototype.getGames = function (team) {
-        return this.http.get('http://localhost:8080/teams/' + team + '/games');
+        return this.http.get(this.baseUrl + 'teams/' + team + '/games');
     };
     GamesService.prototype.getEvents = function (team) {
-        return this.http.get('http://localhost:8080/teams/' + team + '/events');
+        return this.http.get(this.baseUrl + 'teams/' + team + '/events');
     };
     GamesService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
@@ -841,25 +842,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var TeamsService = (function () {
     function TeamsService(http) {
         this.http = http;
+        // getStandings(atLarge: string, division: string, region: string): Observable<Team[]> {
+        //   return this.http.get<Team[]>('http://localhost:8080/standings/' + atLarge + '/' + division + '/' + region );
+        // }
+        this.baseUrl = 'http://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
     }
-    // getStandings(atLarge: string, division: string, region: string): Observable<Team[]> {
-    //   return this.http.get<Team[]>('http://localhost:8080/standings/' + atLarge + '/' + division + '/' + region );
-    // }
     TeamsService.prototype.getStandings = function (atLarge, division, region, sort, cend) {
-        return this.http.get('http://localhost:8080/standings/' + atLarge + '/' + division + '/' + region + '/' + sort + '/' + cend);
+        return this.http.get(this.baseUrl + 'standings/' + atLarge + '/' + division + '/' + region + '/' + sort + '/' + cend);
     };
     TeamsService.prototype.getTeams = function () {
-        return this.http.get('http://localhost:8080/teams');
+        return this.http.get(this.baseUrl + 'teams');
     };
     TeamsService.prototype.getTeam = function (team) {
-        return this.http.get('http://localhost:8080/teams/' + team);
+        return this.http.get(this.baseUrl + 'teams/' + team);
     };
     TeamsService.prototype.searchTeams = function (term) {
         if (!term.trim()) {
             // if not search term, return empty hero array.
             return Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_of__["a" /* of */])([]);
         }
-        return this.http.get('http://localhost:8080/teams/search/' + term);
+        return this.http.get(this.baseUrl + '/teams/search/' + term);
     };
     TeamsService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
