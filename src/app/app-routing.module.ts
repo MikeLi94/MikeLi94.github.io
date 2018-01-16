@@ -10,11 +10,12 @@ const routes: Routes = [
   { path: '',   redirectTo: 'standings', pathMatch: 'full' },
   { path: 'standings', component: StandingsComponent },
   { path: 'teams', component: TeamsComponent },
-  { path: 'teams/:team', component: TeampageComponent }
+  { path: 'teams/:team', component: TeampageComponent },
+  { path: '**', component: StandingsComponent}
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes, {useHash: true}) ],
   exports: [ RouterModule ]
 })
 

@@ -6,7 +6,7 @@
   
   <ul class="search-result">
     <li *ngFor="let team of teams$ | async" >
-      <a href="/teams/{{team.name}}">
+      <a routerLink="/teams/{{team.name}}">
         {{team.name}}
       </a>
     </li>

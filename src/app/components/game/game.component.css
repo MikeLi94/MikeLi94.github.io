@@ -3,11 +3,12 @@
     border:1px solid #aaa;
     width: 300px;
     text-align: left;
-    /* height: 150px; */
+    height: 137px;
     margin:20px;
     /* margin:auto; */
     /* margin-bottom: 20px; */
     background-color: white;
+    overflow-y: auto;
 }
 
 .infoLine{
@@ -22,9 +23,10 @@
 }
 
 .teamLine{
+    height:50px;
     padding:5px;
     font-weight: bold;
-    height:50px;
+    /* overflow: scroll; */
 }
 
 .rank{
