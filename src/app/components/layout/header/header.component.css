@@ -8,7 +8,7 @@
     text-decoration: underline 10px solid rgb(51, 179, 230);
 } */
 
-@media (min-width: 981px) {
+@media (min-width: 781px) {
     .nav-link:hover,.active{
         box-shadow: 0px 8px #007bff;
     }
