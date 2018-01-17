@@ -10,6 +10,8 @@ import {
 import { Team } from '../../../shared/team';
 import { TeamsService } from '../../../shared/teams.service';
 
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-search',

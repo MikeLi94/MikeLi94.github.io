@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -17,6 +19,7 @@ import { SearchComponent } from './components/layout/search/search.component';
 import { TeampageComponent } from './components/teampage/teampage.component';
 import { GameComponent } from './components/game/game.component';
 import { GamesService } from './shared/games.service';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -30,12 +33,15 @@ import { GamesService } from './shared/games.service';
     SearchComponent,
     TeampageComponent,
     GameComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbModule.forRoot()
   ],
   providers: [TeamsService, GamesService],
   bootstrap: [AppComponent]
