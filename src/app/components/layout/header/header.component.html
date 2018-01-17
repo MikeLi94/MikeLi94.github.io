@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 
   <a class="navbar-brand" routerLink="/standings">QuidStats</a>
 
@@ -9,14 +9,15 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-md-0">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/standings">Standings</a>
+        <a [ngClass]="{active:location.path()=='/standings'}" class="nav-link" routerLink="/standings">Standings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/teams">Teams</a>
+        <a [ngClass]="{active:location.path()=='/teams'}"class="nav-link" routerLink="/teams">Teams</a>
       </li>
       <!-- <li class="nav-item">
         <a class="nav-link" routerLink="/events">Events</a>
       </li>
+      Current URL is: <code>{{location.path()}}</code><br>
       <li class="nav-item">
         <a class="nav-link" routerLink="/games">Games</a>
       </li> -->

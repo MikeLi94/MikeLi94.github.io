@@ -1,4 +1,4 @@
-<div *ngFor="let event of events">
+<div *ngFor="let event of events" class="tourneyContainer">
     <h2>{{event.event}}</h2>
     <h3>{{event.gameDate | date}}</h3>
     <span *ngFor = "let game of games">

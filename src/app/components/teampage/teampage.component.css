@@ -21,12 +21,14 @@ th{
 .stats{
     text-align: center;
     background-color:white;
+    font-variant: small-caps;
 }
 
 .rank{
     margin-right:40px;
     margin-left:40px;
     width: 125px;
+    height: 135px;
 }
 
 h1 {
@@ -39,6 +41,8 @@ h1 {
 
 .teamname{
     margin: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-variant: small-caps;
     /* margin-bottom: 50px; */
 }
 
@@ -51,5 +55,12 @@ h1 {
     background-color: #eee;
     width: 100%;
     padding: 2.5%;
-    text-align: center;
+    /* text-align: center; */
+}
+
+@media (max-width: 720px) {
+    .games{
+        text-align: center;
+        /* background-color:white; */
+    }
 }

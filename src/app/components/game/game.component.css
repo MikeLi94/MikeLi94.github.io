@@ -1,7 +1,9 @@
 .game{
     display:inline-block;
     border:1px solid #aaa;
+    /* width:50%; */
     width: 300px;
+    /* max-width: 350px; */
     text-align: left;
     height: 137px;
     margin:20px;
