@@ -78,7 +78,11 @@
         <tr [ngClass] = "{'cutoff': alb ==='atlarge' && ((team.albRank === 16 && team.division === 'College') 
         || (team.albRank === 11 && team.division === 'Adult Community'))}" 
         *ngFor="let team of teams | paginate: { itemsPerPage: 25, currentPage: p }; let i = index">
-          <td class="rank">{{i+1}}</td>
+          
+        <!-- RANKING BASED ON DISPLAYED DATA -->
+          <td *ngIf= "alb === 'atlarge'" class="rank">{{team.albRank}}</td>
+          <td *ngIf= "alb === 'general' && division === 'All'" class="rank">{{team.genRank}}</td>
+          <td *ngIf= "alb === 'general' && division !== 'All'" class="rank">{{team.divRank}}</td>
           <td class="name">
             <a routerLink='/teams/{{team.teamName}}'>{{team.teamName}}</a>
           </td>

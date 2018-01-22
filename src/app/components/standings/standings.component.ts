@@ -35,6 +35,8 @@ export class StandingsComponent implements OnInit {
       .subscribe(teams => this.teams = teams);
   }
 
+
+  // Buttons
   onClickDiv(division: string) {
     this.division = division;
     this.getTeams();
@@ -62,6 +64,7 @@ export class StandingsComponent implements OnInit {
     this.getTeams();
   }
 
+  // ASCENDING/DECENDING
   switchCend() {
     if (this.cend === 'ASC') {
       this.cend = 'DESC';

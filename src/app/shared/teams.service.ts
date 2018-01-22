@@ -17,6 +17,8 @@ export class TeamsService {
   // }
 
   private baseUrl = 'http://quidstatsjs-env.us-west-2.elasticbeanstalk.com/quid/';
+  // private baseUrl = 'http://localhost:3000/quid/';
+  // private baseUrl = this.base + 'quid/';
 
   getStandings(atLarge: string, division: string, region: string, sort: string, cend: string): Observable<Team[]> {
     return this.http.get<Team[]>( this.baseUrl + 'standings/' + atLarge + '/' + division + '/' + region + '/' + sort + '/' + cend );
@@ -30,12 +32,16 @@ export class TeamsService {
     return this.http.get<Team[]>(this.baseUrl + 'teams/' + team);
   }
 
+  getTeamNames(): Observable<Team[]> {
+    return this.http.get<Team[]>(this.baseUrl + 'getTeams/');
+  }
+
   searchTeams(term: string): Observable<Team[]> {
     if (!term.trim()) {
-      // if not search term, return empty hero array.
       return of([]);
     }
-    return this.http.get<Team[]>(this.baseUrl + '/teams/search/' + term);
+    return this.http
+    .get<Team[]>(this.baseUrl + '/teams/search/' + term);
   }
 
 }
