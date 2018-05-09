@@ -1,14 +1,10 @@
 .game{
     display:inline-block;
     border:1px solid #aaa;
-    /* width:50%; */
     width: 300px;
-    /* max-width: 350px; */
     text-align: left;
     height: 137px;
     margin:20px;
-    /* margin:auto; */
-    /* margin-bottom: 20px; */
     background-color: white;
     overflow-y: auto;
 }
@@ -58,4 +54,78 @@
 
 h3{
     color: #777;
+}
+
+@media (max-width: 768px) {
+    .game{
+        display:inline-block;
+        border:0px solid #aaa;
+        width: 100%;
+        text-align: left;
+        height: auto;
+        background-color: white;
+        overflow-y: auto;
+        margin: 0px;
+        font-size: 13px;
+        border-bottom: 1px solid rgb(211, 211, 211);
+        padding:5px;
+    }
+    .container-fluid{
+        margin:0;
+        padding:0;
+
+    }
+    
+    .infoLine{
+        border-bottom:0px solid #aaa;
+        height:auto;
+        padding:0;
+        font-size: 12px;
+    }
+    
+    .swim{
+        float:right;
+    }
+    
+    .teamLine{
+        height:25px;
+        padding:5px;
+        font-weight: bold;
+        /* overflow: scroll; */
+    }
+    
+    .rank{
+        width:60px;
+        /* text-align: right; */
+    }
+    
+    .teamName{
+        width:100%;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    
+    .score{
+        width:50px;
+        float: right;
+    }
+    
+    .tableContainer{
+        padding:0;
+        /* padding-bottom: 0; */
+    }
+    
+    .loser{
+        color:#aaa;
+    }
+    .snitch{
+        float:right;
+    }
+    
+    h3{
+        color: #777;
+    }
+    .tourneyContainer{
+        margin:0;
+    }
 }

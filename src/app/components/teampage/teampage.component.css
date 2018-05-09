@@ -58,7 +58,7 @@ h1 {
     /* text-align: center; */
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .games{
         text-align: center;
         padding: 0;

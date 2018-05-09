@@ -10,8 +10,8 @@ import { Location } from '@angular/common';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
-    private location: Location
+  public route: ActivatedRoute,
+  public location: Location
   ) { }
 
   ngOnInit() {

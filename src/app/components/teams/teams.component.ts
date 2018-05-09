@@ -11,6 +11,7 @@ import { of } from 'rxjs/observable/of';
   styleUrls: ['./teams.component.css']
 })
 export class TeamsComponent implements OnInit {
+  public p = 1;
 
   teams: Team[];
 

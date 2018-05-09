@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { Game } from '../../shared/game';
 import { Event } from '../../shared/event';
+import { TimePipe } from './time.pipe';
 
 import { GamesService } from '../../shared/games.service';
 

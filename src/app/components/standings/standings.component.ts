@@ -23,6 +23,7 @@ export class StandingsComponent implements OnInit {
   public alb = 'general';
   public sort = 'perf';
   public cend = 'DESC';
+  public p = 1;
 
   constructor(private teamsService: TeamsService) { }
 

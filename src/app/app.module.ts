@@ -20,6 +20,7 @@ import { TeampageComponent } from './components/teampage/teampage.component';
 import { GameComponent } from './components/game/game.component';
 import { GamesService } from './shared/games.service';
 import { ContactComponent } from './components/contact/contact.component';
+import { TimePipe } from './components/game/time.pipe';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ContactComponent } from './components/contact/contact.component';
     TeampageComponent,
     GameComponent,
     ContactComponent,
+    TimePipe,
   ],
   imports: [
     BrowserModule,

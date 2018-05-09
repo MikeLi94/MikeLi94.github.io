@@ -2,10 +2,10 @@
     <h2>{{event.event}}</h2>
     <h3>{{event.gameDate | date}}</h3>
     <span *ngFor = "let game of games">
-        <div class="game" *ngIf="game.event === event.event">
+        <div *ngIf="game.event === event.event" class="game">
             <div class="infoLine">
                 <span class="time">
-                    {{game.gameTime}}
+                    {{game.gameTime | time}}
                 </span>
                 <span class="swim">
                     {{game.swim}}
